@@ -143,7 +143,8 @@ void Mesh::UpdateVao ()
     Bind(m_buffer);
     Bind(m_ind_buffer);
     gl::VertexAttrib(0).pointer(3, gl::DataType::kFloat, false, 0, nullptr).enable();
-    gl::VertexAttrib(1).pointer(3, gl::DataType::kFloat, false, 0, (void*)(m_positions.size() / 2 * sizeof(glm::vec3))).enable();
+    gl::VertexAttrib(1).pointer(3, gl::DataType::kFloat, false, 0, (void*)(m_positions.size() / 3 * sizeof(glm::vec3))).enable();
+    gl::VertexAttrib(2).pointer(3, gl::DataType::kFloat, false, 0, (void*)(2 * m_positions.size() / 3 * sizeof(glm::vec3))).enable();
     m_buffer.data(m_positions);
     m_ind_buffer.data(m_indices);
     Unbind(m_ind_buffer);

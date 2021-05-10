@@ -21,7 +21,7 @@ endif()
 
 set (LODEPNG_SOURCE "../deps/lodepng/lodepng.cpp")
 
-file(GLOB CUSTOM_SOURCE "cpp/custom.cpp" "cpp/oglwrap_example.cpp")
+file(GLOB CUSTOM_SOURCE "cpp/custom.cpp" "cpp/oglwrap_example.cpp" ${LODEPNG_SOURCE})
 set (CUSTOM_BINARY_NAME "custom")
 
 if (CMAKE_BUILD_TYPE MATCHES "RELEASE")
